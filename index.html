@@ -18,7 +18,7 @@
   position: fixed;
   top: 10px;
   left: 10px;
-  width: 40px; /* enough space for 28px icons + padding */
+  width: 40px; /* enough space for 20px icons + padding */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,14 +28,14 @@
 
 /* Icons */
 .icon {
-  width: 28px;
-  height: 28px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
 }
 
 /* Main content area */
 #content {
-  margin-left: 60px; /* 50px + 1px line + small spacing */
+  margin-left: 60px; /* 50px + 1px line + spacing */
   padding: 20px;
   background: white;
 }
@@ -51,9 +51,35 @@
   <!-- Icon bar -->
   <div id="iconbar">
 
-    <!-- Outlook -->
+    <!-- NEW: Outlook at the top -->
     <a href="https://outlook.live.com/mail/0/" target="_blank" title="Outlook">
       <img src="img/M365-Outlook-App-Icon.avif" class="icon" alt="Outlook">
     </a>
 
+    <!-- Existing links (unchanged except icon size) -->
+
     <!-- OneNote FamiLi -->
+    <a href="https://onedrive.live.com/personal/bdbb85ef33a400ba/_layouts/15/Doc.aspx?sourcedoc=%7B3dcbf0e7-ed36-4f83-adf4-b36e9c07cff9%7D&action=edit&wd=target%28Internet.one%7C27dc2fad-df6f-4c6b-b83e-a1e9f45ca331%2F-+Internet+PW%7C4ee52eee-b2db-4054-83cd-013ad007bb72%2F%29&wdorigin=703&wdpartid=%7B2345a3c1-c681-45c1-b2d5-7146fb799923%7D%7B1%7D&wdsectionfileid=%7Bbdbb85ef33a400ba%21s803bc655ab06424bb62844458cfd4851%7D"
+       target="_blank" title="OneNote FamiLi">
+      <img src="img/M365-OneDrive-App-Icon.avif" class="icon" alt="OneNote FamiLi">
+    </a>
+
+    <!-- Copilot -->
+    <a href="https://copilot.microsoft.com/" target="_blank" title="Copilot">
+      <img src="img/Microsoft-Copilot-App-Icon.avif" class="icon" alt="Copilot">
+    </a>
+
+    <!-- Account -->
+    <a href="https://account.microsoft.com/" target="_blank" title="Account">
+      <img src="img/ProfileImage.png" class="icon" alt="Account">
+    </a>
+
+  </div>
+
+  <!-- Main content -->
+  <div id="content">
+    <!-- Your content goes here -->
+  </div>
+
+</body>
+</html>
