@@ -1,6 +1,65 @@
 <html>
-  <frameset rows="100, *">
-    <frame src="oben.html">
-    <frame src="https://outlook.live.com/mail/0/">
-  </frameset>
+<head>
+<style>
+/* Left sidebar */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100vh;
+  background: #0F6CBD;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  gap: 10px;
+  z-index: 9999;
+}
+
+/* Icons */
+.sidebar-icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+/* Main content area */
+#content {
+  margin-left: 50px; /* exactly matches sidebar width */
+  padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+  <!-- Fixed left sidebar -->
+  <div id="sidebar">
+
+    <!-- 1. OneNote FamiLi -->
+    <a href="https://onedrive.live.com/personal/bdbb85ef33a400ba/_layouts/15/Doc.aspx?sourcedoc=%7B3dcbf0e7-ed36-4f83-adf4-b36e9c07cff9%7D&action=edit&wd=target%28Internet.one%7C27dc2fad-df6f-4c6b-b83e-a1e9f45ca331%2F-+Internet+PW%7C4ee52eee-b2db-4054-83cd-013ad007bb72%2F%29&wdorigin=703&wdpartid=%7B2345a3c1-c681-45c1-b2d5-7146fb799923%7D%7B1%7D&wdsectionfileid=%7Bbdbb85ef33a400ba%21s803bc655ab06424bb62844458cfd4851%7D"
+       target="_blank" title="OneNote FamiLi">
+      <img src="img/M365-OneDrive-App-Icon.avif" class="sidebar-icon" alt="OneNote FamiLi">
+    </a>
+
+    <!-- 2. Copilot -->
+    <a href="https://copilot.microsoft.com/" target="_blank" title="Copilot">
+      <img src="img/Microsoft-Copilot-App-Icon.avif" class="sidebar-icon" alt="Copilot">
+    </a>
+
+    <!-- 3. Account -->
+    <a href="https://account.microsoft.com/" target="_blank" title="Account">
+      <img src="img/ProfileImage.png" class="sidebar-icon" alt="Account">
+    </a>
+
+  </div>
+
+  <!-- Main content -->
+  <div id="content">
+    <p>Outlook cannot be embedded due to Microsoft security restrictions.</p>
+    <p><a href="https://outlook.live.com/mail/0/" target="_blank">Open Outlook</a></p>
+  </div>
+
+</body>
 </html>
