@@ -1,5 +1,7 @@
 <html>
 <head>
+<title>S Startpage</title>
+
 <style>
 
 /* The thin vertical line at x = 50px */
@@ -13,12 +15,12 @@
   z-index: 9998;
 }
 
-/* Icon column (no background, just floating icons) */
+/* Icon column */
 #iconbar {
   position: fixed;
   top: 10px;
   left: 10px;
-  width: 40px; /* enough space for 20px icons + padding */
+  width: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,12 +37,63 @@
 
 /* Main content area */
 #content {
-  margin-left: 60px; /* 50px + 1px line + spacing */
-  padding: 20px;
+  margin-left: 60px;
+  height: 100vh;
   background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Search box container */
+#search-container {
+  text-align: center;
+}
+
+/* Search input */
+#search-box {
+  width: 500px;
+  max-width: 80vw;
+  padding: 12px 18px;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+  transition: box-shadow 0.2s ease;
+}
+
+#search-box:focus {
+  box-shadow: 0 0 5px #0F6CBD;
+  border-color: #0F6CBD;
+}
+
+/* Search button */
+#search-button {
+  margin-left: -50px;
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  background: #0F6CBD;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#search-button:hover {
+  background: #0d5aa7;
 }
 
 </style>
+
+<script>
+function doSearch() {
+  const q = document.getElementById("search-box").value;
+  if (q.trim() !== "") {
+    window.open("https://www.bing.com/search?q=" + encodeURIComponent(q), "_blank");
+  }
+}
+</script>
+
 </head>
 
 <body>
@@ -51,12 +104,10 @@
   <!-- Icon bar -->
   <div id="iconbar">
 
-    <!-- NEW: Outlook at the top -->
+    <!-- Outlook -->
     <a href="https://outlook.live.com/mail/0/" target="_blank" title="Outlook">
       <img src="img/M365-Outlook-App-Icon.avif" class="icon" alt="Outlook">
     </a>
-
-    <!-- Existing links (unchanged except icon size) -->
 
     <!-- OneNote FamiLi -->
     <a href="https://onedrive.live.com/personal/bdbb85ef33a400ba/_layouts/15/Doc.aspx?sourcedoc=%7B3dcbf0e7-ed36-4f83-adf4-b36e9c07cff9%7D&action=edit&wd=target%28Internet.one%7C27dc2fad-df6f-4c6b-b83e-a1e9f45ca331%2F-+Internet+PW%7C4ee52eee-b2db-4054-83cd-013ad007bb72%2F%29&wdorigin=703&wdpartid=%7B2345a3c1-c681-45c1-b2d5-7146fb799923%7D%7B1%7D&wdsectionfileid=%7Bbdbb85ef33a400ba%21s803bc655ab06424bb62844458cfd4851%7D"
@@ -76,9 +127,12 @@
 
   </div>
 
-  <!-- Main content -->
+  <!-- Main content with centered search box -->
   <div id="content">
-    <!-- Your content goes here -->
+    <div id="search-container">
+      <input id="search-box" type="text" placeholder="Search with Bing..." onkeydown="if(event.key==='Enter') doSearch()">
+      <button id="search-button" onclick="doSearch()">Search</button>
+    </div>
   </div>
 
 </body>
